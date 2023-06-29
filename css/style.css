@@ -1,0 +1,992 @@
+/*S    T    A     R    T                   S     H     E     A     R     E     D                  C     L     A     S     S     I     E     S   */
+
+:root{
+    --main-bg-color:#F5F5F5;
+    --main-header-nav-font-color:white;
+    --main-font-black-heading-color:#1E1E1E;
+    --main-font-paragraph-list-color:#4E4E4E;
+    --main-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --main-cyan-blue-color:#0078FF;
+   --main-classic-rose-color: #CDE1F8;
+   --nav-bg-color:rgba(0, 0, 0, 0.9);
+   
+
+}
+
+.main-bg-custom{
+    background-color: var(--main-bg-color);
+}
+
+.main-cyan-blue-color{
+    color: var(--main-cyan-blue-color);
+}
+
+.main-cyan-blue-bg-custom{
+    background-color: var(--main-cyan-blue-color);
+}
+
+.main-gray-paragraph-color{
+    color: var(--main-font-paragraph-list-color);
+}
+
+/*E         N          D                   S     H     E     A     R     E     D                  C     L     A     S     S     I     E     S   */
+
+/*S    T    A     R    T                   N          A          V                  C     L     A     S     S     I     E     S   */
+.nav-bg-custom{
+    background-color:var(--nav-bg-color);
+}
+nav .nav-link{
+    color: white;
+    position: relative;
+}
+
+nav .navbar-toggler{
+    border: none;
+  
+}
+
+nav .navbar-toggler .navbar-toggler-icon{
+   border-top: 2px solid white;
+   border-bottom: 2px solid white;
+   position: relative;
+   background-image: none;
+}
+nav .navbar-toggler .navbar-toggler-icon::after{
+    content: "";
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+nav .nav-link::after{
+
+    content: "";
+    width: 75%;
+    height: 2px;
+
+   background-color:  white;
+   position: absolute;
+   bottom: 0;
+   left: 12.5%;
+   transform: rotateY(-90deg) ;
+   transform-origin: left;
+   transition: all .5S;
+   
+
+}
+
+nav .nav-link:focus,nav .nav-link:hover{
+    color: white;
+}
+main nav .navbar-nav .nav-link[href="#Dropdown"] div:nth-child(2){
+    transform:rotate(.25turn);
+}
+
+main nav .navbar-nav .nav-link[href="#Dropdown"] +ul,main nav .navbar-nav .nav-link[href="#Dropdown"]+ul{
+    display: none;
+}
+
+main nav .navbar-nav:hover .nav-link[href="#Dropdown"] +ul,main nav:hover .navbar-nav .nav-link[href="#Dropdown"]+ul{
+    display: block ;
+}
+
+main nav .navbar-nav .nav-link[href="#Dropdown"] +ul,main nav .nav-item .dropdown-menu{
+    position: absolute;
+   top: 200% ;
+   left:0%;
+   opacity: 0;
+   
+   transition: all 0.5s;
+
+}
+
+main nav .navbar-nav .nav-link[href="#Dropdown"]:hover +.dropdown-menu,main nav .navbar-nav .nav-link[href="#Dropdown"]:has(+.dropdown-menu:hover) +.dropdown-menu,main nav .navbar-nav .nav-link[href="#Dropdown"]:has(+.dropdown-menu .dropdown-item:hover) +.dropdown-menu{
+ opacity: 1;
+ top:100%;
+ 
+}
+
+
+
+main nav .dropdown-menu .deep-dropdown-menu{
+    padding: 0px;
+list-style-type: none;
+    position: absolute;
+    left: 80%;
+    top: 0%;
+    opacity: 0;
+    display: block !important;
+    transition: all 0.5s;
+}
+
+main nav .dropdown-menu .dropdown-item[href="#Deep-Drop-Down"]:hover +.deep-dropdown-menu,main nav .dropdown-menu .deep-dropdown-menu:hover{
+    left:100%;
+    opacity: 1;
+    
+}
+
+
+main nav .dropdown-menu .deep-dropdown-menu{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+main nav .dropdown-menu .deep-dropdown-menu  .deep-dropdown-item{
+text-decoration: none;
+color: black;
+}
+
+main nav .dropdown-menu .deep-dropdown-menu  .deep-dropdown-item:hover{
+    color: var(--main-cyan-blue-color);
+}
+
+main nav .dropdown-menu .dropdown-item{
+    color: black;
+}
+
+main nav .dropdown-menu .dropdown-item:hover{
+    color: var(--main-cyan-blue-color);
+    background-color: white;
+}
+
+nav .nav-link:focus,main nav .nav-link:hover::after,main:has(.ABOUT:not(:target)):has(.SERVICES:not(:target)):has(.WORK:not(:target)):has(.BLOG:not(:target)):has(.CONTACT:not(:target)) nav .navbar-nav .nav-link.active::after,main:has(.ABOUT:target) nav .navbar-nav .nav-link[href="#ABOUT"]::after,main:has(.SERVICES:target) nav .navbar-nav .nav-link[href="#SERVICES"]::after,main:has(.WORK:target) nav .navbar-nav .nav-link[href="#WORK"]::after,main:has(.BLOG:target) nav .navbar-nav .nav-link[href="#BLOG"]::after,main:has(.CONTACT:target) nav .navbar-nav .nav-link[href="#CONTACT"]::after{
+    
+    transform: rotateY(0deg);
+}
+
+
+
+
+
+/*E         N          D                   N          A          V                  C     L     A     S     S     I     E     S   */
+
+/*S    T    A     R    T                   H          E          A          D          E          R                  C     L     A     S     S     I     E     S   */
+.Home{
+    background-image: url("../img/hero-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* filter: brightness(50%); */
+}
+
+.Home .layer{
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.Home .layer .home-data h1{
+color: white;
+position: relative;
+font-family: var(--main-font-family);
+font-size: 72px;
+line-height: 86.4px;
+
+
+}
+
+
+
+.Home .layer .home-data p span::after{
+    content: "";
+   
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+   
+  animation-name: word;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+    
+
+
+}
+
+@keyframes word{
+    0%{
+        content: "|";
+    }
+
+    1%{content: "F|";}
+
+    2%{content: "Fr|";}
+
+    3%{content: "Fre|";}
+
+    4%{content: "Free|";}
+
+    5%{content: "Freel|";}
+
+    6%{content: "Freela|";}
+
+    7%{content: "Freelan|";}
+
+    9%{content: "Freelance|";}
+
+    9%{content: "Freelance|";}
+
+    10%{content: "Freelancer|";}
+
+    11%{content: "Freelancer ";}
+
+    12%{content: "Freelancer|";}
+
+    13%{content: "Freelancer ";}
+
+    14%{content: "Freelancer|";}
+
+    15%{content: "Freelancer ";}
+
+    16%{content: "Freelance|";}
+
+    17%{content: "Freelanc|";}
+
+    18%{content: "Freelan|";}
+
+    19%{content: "Freela|";}
+
+    20%{content: "Freel|";}
+
+    21%{content: "Free|";}
+
+    22%{content: "Fre|";}
+
+    23%{content: "Fr|";}
+
+    24%{content: "F|";}
+
+    25%{content: "|";}
+
+    26%{content: "P|";}
+
+    27%{content: "Ph|";}
+
+    28%{content: "Pho|";}
+
+    29%{content: "Pho|";}
+
+    30%{content: "Phot|";}
+
+    31%{content: "Photo|";}
+
+    32%{content: "Photog|";}
+
+    33%{content: "Photogr|";}
+
+    34%{content: "Photogra|";}
+
+    35%{content: "Photograp|";}
+
+    36%{content: "Photograph|";}
+
+    37%{content: "Photographe|";}
+
+    38%{content: "Photographer|";}
+
+    39%{content: "Photographer ";}
+
+    40%{content: "Photographer|";}
+
+    41%{content: "Photographer ";}
+
+    42%{content: "Photographer|";}
+
+    43%{content: "Photographer ";}
+
+    44%{content: "Photographe|";}
+
+    45%{content: "Photograph|";}
+
+    46%{content: "Photograp|";}
+
+    47%{content: "Photogra|";}
+
+    48%{content: "Photogr|";}
+
+    49%{content: "Photog|";}
+
+    50%{content: "Photo|";}
+
+    51%{content: "Phot|";}
+
+    52%{content: "Pho|";}
+
+    53%{content: "Ph|";}
+
+    54%{content: "P|";}
+
+    55%{content: "|";}
+
+    56%{content: "D|";}
+
+    57%{content: "De|";}
+
+    58%{content: "Des|";}
+
+    59%{content: "Desi|";}
+
+    60%{content: "Desig|";}
+
+    61%{content: "Design|";}
+
+    62%{content: "Designe|";}
+
+    63%{content: "Designer|";}
+
+    64%{content: "Designer ";}
+
+    65%{content: "Designer|";}
+
+    66%{content: "Designer ";}
+
+    67%{content: "Designer|";}
+
+    68%{content: "Designer ";}
+
+    69%{content: "Designe|";}
+
+    70%{content: "Design|";}
+
+    71%{content: "Desig|";}
+
+    72%{content: "Desi|";}
+
+    73%{content: "Des|";}
+
+    74%{content: "De|";}
+
+    75%{content: "D|";}
+
+    76%{content: "De|";}
+
+    77%{content: "Dev|";}
+
+    78%{content: "Deve|";}
+
+    79%{content: "Devel|";}
+
+    80%{content: "Develo|";}
+
+    81%{content: "Develop|";}
+
+    82%{content: "Develope|";}
+
+    83%{content: "Developer|";}
+
+    84%{content: "Developer ";}
+
+    85%{content: "Developer|";}
+
+    86%{content: "Developer ";}
+
+    87%{content: "Developer|";}
+
+    88%{content: "Developer ";}
+
+    88%{content: "Develope|";}
+
+    89%{content: "Develop|";}
+
+    90%{content: "Develo|";}
+
+    91%{content: "Devel|";}
+
+    92%{content: "Deve|";}
+
+    93%{content: "Dev|";}
+
+    94%{content: "De|";}
+
+    95%{content: "D|";}
+
+    96%{content: "|";}
+
+    100%{content: "|";}
+
+}
+
+/*E         N          D                   H          E          A          D          E          R                  C     L     A     S     S     I     E     S   */
+
+/* S    T    A     R    T                   A          B          O          U          T                                          C     L     A     S     S     I     E     S */
+.ABOUT .about-data .row .col-md-6 article h5::after{
+    content: "";
+    background-color: var(--main-cyan-blue-color);
+    width: 15%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.w-85{
+    width: 85%;
+}
+
+.w-90{
+    width: 90%;
+}
+
+.h-0-75rem{
+height: 12px;
+}
+
+
+
+.main-bg-skills-second{
+    background-color: var(--main-classic-rose-color);
+}
+
+.main-pragraph-font-color{
+    color: var(--main-font-paragraph-list-color);
+}
+
+/* E         N          D                   A          B          O          U          T                                          C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   S          E          R          V          I          C          E          S                                          C     L     A     S     S     I     E     S */
+
+.SERVICES .services-data .intro h3{
+    color: var(--main-font-black-heading-color);
+    font-family: var(--main-font-family);
+    font-size: 48px;
+    line-height: 57.6px;
+
+}
+
+.SERVICES .services-data .intro p{
+    color: var(--main-font-paragraph-list-color);
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    line-height: 24px;
+
+}
+
+.SERVICES .services-data .intro p::after{
+    content: "";
+    width: 3%;
+    height: 4px;
+    background-color: var(--main-cyan-blue-color);
+    position: absolute;
+    left: 48.5%;
+    bottom: 0%;
+}
+
+.SERVICES .services-data .row .col-md-4 .item .icon-holder{
+    margin-top: 10px;
+    
+
+}
+
+.SERVICES .services-data .row .col-md-4 .item .icon-holder span{
+    
+    
+    width: 120px;
+    height: 120px;
+    border: 10px solid var(--main-cyan-blue-color);
+    transition: all 0.5s;
+    
+}
+
+.SERVICES .services-data .row .col-md-4 .item:hover .icon-holder span{
+    background-color: var(--main-cyan-blue-color);
+    border-color: var(--main-classic-rose-color);
+}
+
+.SERVICES .services-data .row .col-md-4 .item:hover .icon-holder span svg{
+    color: white;
+    line-height:49.6px;
+}
+
+
+.SERVICES .services-data .row .col-md-4 .item h2{
+    color: var(--main-font-black-heading-color);
+    font-family: var(--main-font-family);
+    font-size:22.4px;
+    line-height: 26.88px;
+    padding: 6.4px 0px;
+
+}
+
+.SERVICES .services-data .row .col-md-4 .item p{
+    color: var(--main-font-paragraph-list-color);
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+/* E         N          D                   S          E          R          V          I          C          E          S                                          C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   N          U          M          B          E          R          S                                          C     L     A     S     S     I     E     S */
+.numbers{
+    background-image: url("../img/post-3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding:128px 0px ;
+
+}
+
+.numbers .numbers-layer{
+    background-color: rgba(0, 120, 255, .7);
+    
+}
+
+
+
+.numbers  .numbers-data .row .col-sm-3 .number-icon-holder span{
+    /* background-color: red; */
+    width: 80px;
+    height: 80px;
+    border: 10px solid var(--main-classic-rose-color);
+    line-height: 48px;
+    
+}
+
+
+
+.numbers  .numbers-data .row .col-sm-3 .number-icon-data p{
+/* background-color: blue; */
+font-family: var(--main-font-family);
+font-size: 32px;
+line-height: 48px;
+
+}
+
+.numbers  .numbers-data .row .col-sm-3 .number-icon-data span{
+/* background-color: blueviolet; */
+font-family: var(--main-font-family);
+font-size: 16px;
+line-height: 24px;
+}
+/* E         N          D                   N          U          M          B          E          R          S                                          C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   W          O          R          K                                                    C     L     A     S     S     I     E     S */
+
+.WORK .work-data .intro{
+    margin-bottom: 64px;
+}
+
+.WORK .work-data .intro h3{
+    color: var(--main-font-black-heading-color);
+    font-family: var(--main-font-family);
+    font-size: 48px;
+    line-height: 57.6px;
+}
+
+.WORK .work-data .intro p{
+    color: var(--main-font-paragraph-list-color);
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.WORK .work-data .intro p::after{
+    content: "";
+    width: 3%;
+    height: 4px;
+    background-color: var(--main-cyan-blue-color);
+    position: absolute;
+    left: 48.5%;
+    bottom: 0%; 
+}
+
+.WORK .work-data .row .col-md-4 .card figure img{
+    transform: scale(1);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.WORK .work-data .row .col-md-4 .card:hover figure img{
+    transform: scale(1.3);
+}
+
+.WORK .work-data .row .col-md-4 .card .card-body .card-data h2{
+    color: var(--main-font-black-heading-color);
+    font-family: var(--main-font-family);
+    font-size: 19.2px;
+    line-height: 23.04px;
+}
+
+.WORK .work-data .row .col-md-4 .card .card-body .card-data div span{
+    font-family: var(--main-font-family);
+    font-size: 12.8px;
+    line-height: 19.2px;
+
+}
+
+.WORK .work-data .row .col-md-4 .card .card-body .card-link{
+    width: 45px;
+    height: 45px;
+    border: 5px solid var(--main-cyan-blue-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* E         N          D                   W          O          R          K                                                    C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   F          E          E          D          B          A          C          K                                                    C     L     A     S     S     I     E     S */
+.feedback{
+    background-image: url("../img/overlay-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 128px 0px;
+
+}
+
+
+.feedback .bg-feedback-layer{
+    background-color: rgba(0, 120, 255, .7);
+}
+
+.feedback .feedback-data .carousel .carousel-inner .carousel-item .figure-data span{
+    font-family: var(--main-font-family);
+    font-size: 22.4px;
+    line-height: 33.6px;
+
+}
+
+
+.feedback .feedback-data .carousel .carousel-inner .carousel-item .figure-data p{
+    font-family: var(--main-font-family);
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0px 208px;
+
+}
+
+.feedback .feedback-data .carousel .carousel-indicators [data-bs-target]{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* E         N          D                   F          E          E          D          B          A          C          K                                                    C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   B          L          O          G                                                    C     L     A     S     S     I     E     S */
+.BLOG .blog-data .blog-intro{
+    margin-bottom: 64px;
+}
+
+.BLOG .blog-data .blog-intro h3{
+   color: var(--main-font-black-heading-color);
+   font-family: var(--main-font-family);
+   font-size: 48px;
+   line-height: 57.6px;
+
+}
+
+.BLOG .blog-data .blog-intro p{
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.BLOG .blog-data .blog-intro p::after{
+
+    content: "";
+    width: 3%;
+    height: 4px;
+    background-color: var(--main-cyan-blue-color);
+    position: absolute;
+    left: 48.5%;
+    bottom: 0%; 
+}
+
+.BLOG .blog-data .row .col-md-4 .badge{
+   font-family: var(--main-font-family);
+   font-size: 11.2px;
+   line-height: 13.44px;
+   letter-spacing: 0.1px; 
+}
+
+.BLOG .blog-data .row .col-md-4 h3 a{
+    color:#212529 ;
+    font-family: var(--main-font-family);
+    font-size: 20.8px;
+    line-height: 24.96px;
+    margin: 9.6px 0px 8px;
+    transition: all 0.5s;
+}
+
+.BLOG .blog-data .row .col-md-4 h3 a:hover{
+    color: var(--main-cyan-blue-color);
+}
+
+.BLOG .blog-data .row .col-md-4 p{
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.BLOG .blog-data .row .col-md-4 .card  .card-footer .auther a .auther-inner .auther-img img{
+    width: 32px;
+    height: 32px;
+}
+
+.BLOG .blog-data .row .col-md-4 .card  .card-footer .auther a .auther-inner p{
+    color:#212529 ;
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.5s;
+
+}
+
+
+.BLOG .blog-data .row .col-md-4 .card  .card-footer .auther a .auther-inner p:hover{
+    color: var(--main-cyan-blue-color);
+}
+
+
+.BLOG .blog-data .row .col-md-4 .card  .card-footer .auther-time p{
+    color:var(--main-font-black-heading-color) ;
+    font-family: var(--main-font-family);
+    font-size:16px;
+    line-height: 24px;
+
+}
+/* E         N          D                   B          L          O          G                                                    C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   C          O          N          T          A          C          T                                                    C     L     A     S     S     I     E     S */
+
+.CONTACT .contact-data .row .col-md-6 h5{
+    color: var(--main-font-black-heading-color);
+    font-family: var(--main-font-family);
+    font-size: 32px;
+    line-height: 38.4px;
+
+}
+
+.CONTACT .contact-data .row .col-md-6 h5::after{
+    content: "";
+    background-color: var(--main-cyan-blue-color);
+    width: 15%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.CONTACT .contact-data .row .col-md-6 .send-message .btn{
+    color: white;
+    background-color: var(--main-cyan-blue-color);
+    padding: 10px 24px;
+    font-family: var(--main-font-family);
+    font-size:19.2px ;
+    line-height: 28.8px;
+    border: 5px solid white;
+    transition: all 0.5s;
+    
+
+}
+
+.CONTACT .contact-data .row .col-md-6 .send-message .btn:hover{
+    border: 5px solid var(--main-classic-rose-color);
+}
+
+.CONTACT .contact-data .row .col-md-6 p{
+    font-family: var(--main-font-family);
+    font-size: 20px;
+    line-height: 30px;
+
+}
+
+.CONTACT .contact-data .row .col-md-6 ul li p{
+    font-family: var(--main-font-family);
+    font-size: 16px;
+}
+
+.CONTACT .contact-data .row .col-md-6 ul li div a{
+    
+    font-family: var(--main-font-family);
+    font-size: 16px;
+}
+
+.CONTACT .contact-data .row .col-md-6 .social-media{
+   margin-bottom: 20px;
+}
+
+.CONTACT .contact-data .row .col-md-6 .social-media .contact-icon-holder{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid var(--main-cyan-blue-color);
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.CONTACT .contact-data .row .col-md-6 .social-media .contact-icon-holder:hover{
+background-color: var(--main-cyan-blue-color);
+border: 3px solid var(--main-classic-rose-color);
+}
+
+.CONTACT .contact-data .row .col-md-6 .social-media .contact-icon-holder a{
+    color:var(--main-font-black-heading-color);
+    transition: all 0.5s;
+}
+
+.CONTACT .contact-data .row .col-md-6 .social-media .contact-icon-holder:hover a{
+color: white;
+}
+
+/* E         N          D                   C          O          N          T          A          C          T                                                    C     L     A     S     S     I     E     S */
+
+
+/* S    T    A     R    T                   F          O          O          T          E          R                                                    C     L     A     S     S     I     E     S */
+
+footer{
+    background-image: url("../img/overlay-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+footer .footer-bg-layer{
+    background-color: rgba(0, 120, 255, .7);
+}
+
+/* E         N          D                   F          O          O          T          E          R                                                    C     L     A     S     S     I     E     S */
+
+/* S    T    A     R    T                   B          A          C          K                           T          O                                   T          O          P                                                    C     L     A     S     S     I     E     S */
+main .back-to-top{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background-color: var(--main-cyan-blue-color);
+    z-index: 999;
+    opacity: 1;
+   
+    transition: all 0.5s;
+}
+
+main:has(header:hover,nav:hover):has(header:target) .back-to-top,main:has(header:hover,nav:hover):not(:target) .back-to-top{
+    opacity: 0;
+    display: none;
+
+}
+
+
+/* E         N          D                   B          A          C          K                           T          O                                   T          O          P                                                    C     L     A     S     S     I     E     S */
+
+
+
+
+
+
+
+
+
+
+
+
+/*S    T    A     R    T                   M          E          D          I          A                               Q          U          E          R          Y                                C     L     A     S     S     I     E     S   */
+
+@media screen and (max-width:1024px) {
+/*S    T    A     R    T                   N          U          M          B          E          R          S                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+.numbers{
+    background-attachment:scroll;
+}
+
+/*E         N          D                   N          U          M          B          E          R          S                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+
+/*S    T    A     R    T                   F          E          E          D          B          A          C          K                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+
+.feedback{
+    background-attachment:scroll;
+}
+
+/*E         N          D                   F          E          E          D          B          A          C          K                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+
+/*S    T    A     R    T                   F          O          O          T          E          R                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+footer{
+    background-attachment:scroll; 
+}
+/*E         N          D                   F          O          O          T          E          R                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+}
+
+@media screen and (max-width:992px) {
+/*S    T    A     R    T                   N          A          V                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+nav .navbar-nav{
+    
+    position: absolute;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    top:55px;
+    left:15px;
+    right: 15px;
+    padding-left: 1rem;
+
+
+}
+
+nav .navbar-nav .nav-item .nav-link{
+    color: black;
+}
+
+main nav .navbar-nav .nav-link[href="#Dropdown"] + ul,main nav .navbar-nav .nav-item .dropdown-menu{
+    position: static !important;
+}
+
+main nav .navbar-nav .nav-item .dropdown-menu li:has(a[href="#Deep-Drop-Down"]){
+    position: static !important;
+    display: block !important;
+}
+
+
+
+main nav .navbar-nav .nav-link[href="#Dropdown"] + ul,main nav .navbar-nav .nav-item .dropdown-menu .deep-dropdown-menu{
+    position: static;
+
+   
+}
+
+main nav .navbar-nav:hover .nav-link[href="#Dropdown"]:not(:hover) +.dropdown-menu,main nav .navbar-nav .nav-item .dropdown-menu{
+  
+    display: none ;
+}
+
+main nav .navbar-nav .nav-link[href="#Dropdown"]:hover +ul,main nav .navbar-nav .nav-item .dropdown-menu:hover{
+    display: block !important;
+}
+
+main nav .dropdown-menu .deep-dropdown-menu {
+    display: none !important;
+}
+
+main nav .dropdown-menu:has(li a[href="#Deep-Drop-Down"]:hover) .deep-dropdown-menu,main nav .dropdown-menu .deep-dropdown-menu:hover  {
+    display: block !important;
+}
+
+
+nav .navbar-nav .nav-item .nav-link:hover{
+    color: var(--main-cyan-blue-color);
+}
+/*E         N          D                    N          A          V                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */    
+
+/*S    T    A     R    T                   F          E          E          D          B          A          C          K                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+.feedback .feedback-data .carousel .carousel-inner .carousel-item .figure-data p{
+    padding: 0px 0px;
+}
+
+/*E         N          D                   F          E          E          D          B          A          C          K                   M          E          D          I          A                               Q          U          E          R          Y                  C     L     A     S     S     I     E     S   */
+
+}
+
+
+
+/*E         N          D                   M          E          D          I          A                               Q          U          E          R          Y                                C     L     A     S     S     I     E     S   */
